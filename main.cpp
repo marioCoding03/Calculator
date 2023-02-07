@@ -5,7 +5,7 @@ void check_y_Or_n(){
 	do {
 		std::cout << "Please specify 'y' or 'n': ";
 		std::cin >> result;
-	} while (result != "y" || "n");
+	} while (result != "y" && result != "n");
 }
 
 void check() {
