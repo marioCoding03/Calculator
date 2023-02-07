@@ -1,29 +1,36 @@
 #include <iostream>
 
 std::string result;
-void check_y_Or_n(){
-	do {
-		std::cout << "Please specify 'y' or 'n': ";
-		std::cin >> result;
-	} while (result != "y" && result != "n");
-}
-
 void check() {
-	std::cout << "Add more numbers?" << std::endl;
-	check_y_Or_n();
-	if (result == "y") {
-		std::cout << "yes";
-	}
-	else {
-		std::cout << "no";
-	}
+    do {
+        std::cout << "Add more numbers?" << std::endl;
+        std::cout << "Please specify 'y' or 'n': ";
+        std::cin >> result;
+    } while (result != "y" && result != "n");
+
 }
 
 void add() {
 	double numbers = {};
 	std::cout << "enter a number: ";
 	std::cin >> numbers;
-	check();
+    std::cout << "enter another number: ";
+    std::cin >> numbers;
+    check();
+    if (result == "y") {
+        do{
+            std::cout << "enter another number: ";
+            std::cin >> numbers;
+            check();
+        }while(result != "no");
+    }
+    else {
+        double add_result = 0;
+        for(int i {0}; i < numbers; i++){
+            add_result += numbers;
+        }
+        std::cout << "Added numbers:  = " << add_result << std::endl;
+    }
 }
 
 int main()
