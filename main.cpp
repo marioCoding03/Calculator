@@ -1,7 +1,7 @@
 #include <iostream>
 
 std::string result;
-void check() {
+void check() { //checks if user wants to 'add','subtract', 'multiply' or 'divide' more numbers
     do {
         std::cout << "Add more numbers?" << std::endl;
         std::cout << "Please specify 'y' or 'n': ";
@@ -17,12 +17,12 @@ void add() {
     std::cout << "enter another number: ";
     std::cin >> numbers;
     check();
-    if (result == "y") {
+    if (result == "y") {//if the result from check(); function is "y" then it expects another number
         do{
             std::cout << "enter another number: ";
             std::cin >> numbers;
-            check();
-        }while(result != "no");
+            check();//checks again to see if the users wants to add more numbers
+        }while(result != "n");
     }
     else {
         double add_result = 0;
@@ -31,6 +31,8 @@ void add() {
         }
         std::cout << "Added numbers:  = " << add_result << std::endl;
     }
+
+
 }
 
 int main()
